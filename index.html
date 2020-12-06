@@ -11,53 +11,24 @@
 <body>
     <main>
         <h1>Daily To-Do list manager</h1>
-        <div class="todo-container">
-            <div class="heading">
-                <div class="date">Thursday 10-15-2020</div>
-                <form class="input-area">
-                    <input type="text" placeholder="Take the garbage out">
-                    <button type="submit">+</button>
+        <div class="todo">
+            <div class="todo__header">
+                <div class="date-container">
+                    <p class="weekday"></p>
+                    <p class="date"></p>
+                </div>
+                <form class="input-box">
+                    <input class="input" type="text" placeholder="Take the garbage out">
+                    <button class="add" type="submit">+</button>
                 </form>
             </div>
-            <div class="tasks-area">
-                <div class="pending-tasks-container">
-                    <p>You have <span class="pending-count">0</span> pending items</p>
-                    <form class="pending-tasks" action="">
-                        <div class="pending-task">
-                            <input type="checkbox" id="" name="pending1" value="">
-                            <label for="pending1">főzés</label>
-                            <span class="trash"></span>
-                        </div>
-                        <div class="pending-task">
-                            <input type="checkbox" id="" name="pending2" value="">
-                            <label for="pending2">mosás</label>
-                            <span class="trash"></span>
-                        </div>
-                    </form>
-                </div>
-                <div class="completed-tasks-container hide">
-                    <p>Completed tasks: <span>0</span>%</p>
-                    <form class="completed-tasks" action="">
-                        <div class="completed-task">
-                            <input type="checkbox" id="" name="completed1" value="" checked disabled>
-                            <label for="completed1">takarítás</label>
-                            <span class="trash"></span>
-                        </div>
-                        <div class="completed-task">
-                            <input type="checkbox" id="" name="completed2" value="" checked disabled>
-                            <label for="completed2">telefonálás</label>
-                            <span class="trash"></span>
-                        </div>
-                    </form>
-                </div>
-                <div class="instructions">
-                    <span class="complete--show complete--hide">Show Complete</span>
-                    <span class="clear">Clear All</span>
-                </div>
-            </div>
-            <div class="chill-area">
-                <img src="img/rest-icon.png" alt="rest">
-                <p>Time to chill! You have no todos.</p>
+            <p>You have <span class="pending-count"></span> pending items</p>
+            <div class="chill"></div>
+            <div class="pending-todos-box"></div>
+            <div class="completed-todos-box hide"></div>
+            <div class="todo__footer">
+                <span class="hide-completed">Show Complete</span>
+                <span class="clear">Clear All</span>
             </div>
         </div>
     </main>

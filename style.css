@@ -23,7 +23,14 @@ h1 {
     color: #fff;
 }
 
-.todo-container {
+.date-container {
+    color: rgb(245, 81, 81);
+    font-size: 1.2rem;
+    margin: 2rem 0;
+    line-height: .3rem;
+}
+
+.todo {
     width: 60%;
     background-color: rgb(245, 245, 235);
     border-radius: .2rem;
@@ -32,30 +39,26 @@ h1 {
     flex-direction: column;
 }
 
-.date {
-    color: rgb(245, 81, 81);
-    font-size: 1.2rem;
-    word-spacing: 60rem;
-    margin: 2rem 0; 
-}
-
-.input-area {
+.input-box {
     display: flex;
+    margin-bottom: 1.5rem;
 }
 
-.input-area input {
+.input {
+    font-size: 1rem;
     line-height: 2rem;
     flex-grow: 1;
     outline: none;
     border: 1px solid rgb(207, 204, 204);
     border-radius: .2rem;
+    padding: 0 .5rem;
 }
 
-.input-area input:focus {
+.input:focus {
     border: 1px solid rgb(25, 115, 231);
 }
 
-.input-area input::placeholder {
+.input::placeholder {
     font-style: italic;
     color: rgb(207, 204, 204);
 }
@@ -81,29 +84,27 @@ button:focus {
     border: 1px solid rgb(25, 115, 231);
 }
 
-.tasks-area {
-    /* display: none; */
-}
-
-.pending-tasks-container {
-    margin: 3rem 0;
+.pending-todos-box {
+    margin-bottom: 1rem; 
     position: relative;
 }
 
-.pending-task {
+.todos {
     background-color: rgb(220, 227, 238);
-    margin-bottom: .5rem;
+    margin: .5rem 0;
     display: flex;
-    align-items: center;
     border-radius: .2rem;
     width: 100%;
     line-height: 3rem;
+    padding-left:  .5rem;
     position: relative;
-    animation: slideInTask ease-out .8s;
-    /* visibility: hidden; */
 }
 
-@keyframes slideInTask{
+.show-in {
+    animation: show-in ease-out .8s;
+}
+
+@keyframes show-in {
     0% {
         opacity: 0;
         left: 100%;
@@ -119,32 +120,12 @@ button:focus {
     }
 }
 
-.pending-task label, .completed-task label {
+.input-label-box {
     flex-grow: 1;
 }
 
-.completed-tasks-container {
-    margin: 3rem 0;
-    display: none; 
-}
-
-.completed-task {
-    position: relative;
-    background-color: #fff;
-    margin-bottom: .5rem;
-    display: flex;
-    align-items: center;
-    border-radius: .2rem;
-    line-height: 3rem;
-}
-
-.completed-task label {
-    text-decoration: line-through;
-}
-
-.pending-task:hover.pending-task::after, .completed-task:hover.completed-task::after {
-    animation: SlideInTrash ease-in .3s;
-    position: relative;
+.todos:hover.todos::after {
+    position: absolute;
     right: 0;
     width: 3rem;
     height: 100%;
@@ -153,9 +134,9 @@ button:focus {
     text-align: center;
     font-size: 1.5rem;
     border-radius: .2rem;
-    cursor: pointer;
     content: '\f1f8';
     font-family: FontAwesome;
+    animation: SlideInTrash ease-in .3s;
 }
 
 @keyframes SlideInTrash {
@@ -169,43 +150,62 @@ button:focus {
     }
 }
 
-.instructions {
-    display: flex;
-    justify-content: space-evenly;
-    font-weight: 700;
-}
-
-.complete--show, .complete--hide, .clear {
+.trash {
+    width: 3rem;
+    height: 1.5rem;
+    z-index: 10;
     cursor: pointer;
 }
 
-.complete--show:hover, .complete--hide:hover, .clear:hover {
+input[type='checkbox'] {
+    cursor: pointer;
+}
+
+input[type='checkbox']:checked + label {
+    text-decoration: line-through;
+}
+
+.checked {
+    background-color: #fff;
+}
+
+.hide {
+    display: none;
+}
+
+.todo__footer {
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 700;
+    margin: 2rem 0 1rem 0;
+}
+
+.hide-completed, .clear {
+    cursor: pointer;
+}
+
+.hide-completed:hover, .clear:hover {
     color: rgb(25, 115, 231);
 }
 
-.chill-area {
+.chilldesign {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    display: none;
 }
 
-.chill-area img {
+.chilldesign img {
     width: 10rem;
     margin: 5rem 0 1rem 0;
 }
 
-.chill-area p {
+.chilldesign p {
     font-weight: 800;
 }
 
-.hide {
-    /* display: none; */
-}
-
 @media screen and (max-width: 600px) {
-    .todo-container {
+    .todo {
         width: 100%;
     }
 }
