@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+    <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Daily To-Do list manager</h1>
+        <div class="todo-container">
+            <div class="heading">
+                <div class="date">Thursday 10-15-2020</div>
+                <form class="input-area">
+                    <input type="text" placeholder="Take the garbage out">
+                    <button type="submit">+</button>
+                </form>
+            </div>
+            <div class="tasks-area">
+                <div class="pending-tasks-container">
+                    <p>You have <span class="pending-count">0</span> pending items</p>
+                    <form class="pending-tasks" action="">
+                        <div class="pending-task">
+                            <input type="checkbox" id="" name="pending1" value="">
+                            <label for="pending1">főzés</label>
+                            <span class="trash"></span>
+                        </div>
+                        <div class="pending-task">
+                            <input type="checkbox" id="" name="pending2" value="">
+                            <label for="pending2">mosás</label>
+                            <span class="trash"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="completed-tasks-container hide">
+                    <p>Completed tasks: <span>0</span>%</p>
+                    <form class="completed-tasks" action="">
+                        <div class="completed-task">
+                            <input type="checkbox" id="" name="completed1" value="" checked disabled>
+                            <label for="completed1">takarítás</label>
+                            <span class="trash"></span>
+                        </div>
+                        <div class="completed-task">
+                            <input type="checkbox" id="" name="completed2" value="" checked disabled>
+                            <label for="completed2">telefonálás</label>
+                            <span class="trash"></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="instructions">
+                    <span class="complete--show complete--hide">Show Complete</span>
+                    <span class="clear">Clear All</span>
+                </div>
+            </div>
+            <div class="chill-area">
+                <img src="img/rest-icon.png" alt="rest">
+                <p>Time to chill! You have no todos.</p>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="main.js"></script>
+</body>
+</html>
