@@ -163,6 +163,7 @@ input[type='checkbox'] {
 
 input[type='checkbox']:checked + label {
     text-decoration: line-through;
+    color: rgb(132, 135, 141); 
 }
 
 .checked {

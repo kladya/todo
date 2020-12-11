@@ -95,7 +95,7 @@ function createTodosElement(todosArray) {
     pendingTodosBox.innerHTML = '';
     completedTodosBox.innerHTML = '';
     todosArray.forEach(todo => {
-        const checked = todo.completed ? 'checked' : null;
+        const checked = todo.completed ? 'checked disabled' : null;
         const TodosBoxElement = document.createElement("div");
         TodosBoxElement.classList.add('todos');
         TodosBoxElement.setAttribute('data-id', todo.id);
